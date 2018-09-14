@@ -123,3 +123,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
+# Authentication
+# https://docs.djangoproject.com/en/1.11/topics/auth/default/
+AUTH_USER_MODEL = 'user.User'
