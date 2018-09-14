@@ -26,3 +26,14 @@ class UserCreateView(CreateView):
         messages.success(self.request, "Signed up successfully. "
                 "Log in now.")
         return super(UserCreateView, self).form_valid(form)
+
+
+# Password Reset
+class UserPasswordResetView(PasswordResetView):
+    template_name = "user/password_reset.html"
+    success_url = reverse_lazy("password-reset")
+
+    def form_valid(self, form):
+        messages.info(self.request, "A password reset link was created. "
+                "Please check your email and confirm.")
+        return super(UserPasswordResetView, self).form_valid(form)
