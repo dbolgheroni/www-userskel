@@ -12,30 +12,30 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="{% url 'index' %}">Company</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Product 1</a>
-              <a class="dropdown-item" href="#">Product 2</a>
-              <a class="dropdown-item" href="#">Product 3</a>
-            </div>
-          </li>
-        </ul>
+        <a class="navbar-brand" href="{% url 'index' %}">Company</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Product 1</a>
+                        <a class="dropdown-item" href="#">Product 2</a>
+                        <a class="dropdown-item" href="#">Product 3</a>
+                    </div>
+                </li>
+            </ul>
 
-        <div class="btn-toolbar">
-          <a class="btn btn-outline-primary mr-2" href="{% url 'user-login' %}">Log in</a>
-          <a class="btn btn-primary" href="#">Sign Up</a>
+            <div class="btn-toolbar">
+                <a class="btn btn-outline-primary mr-2" href="{% url 'user-login' %}">Log in</a>
+                <a class="btn btn-primary" href="#">Sign Up</a>
+            </div>
         </div>
-      </div>
     </nav>
 
     {% block content %}
