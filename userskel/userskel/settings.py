@@ -128,3 +128,4 @@ STATICFILES_DIRS = [
 # Authentication
 # https://docs.djangoproject.com/en/1.11/topics/auth/default/
 AUTH_USER_MODEL = 'user.User'
+LOGIN_URL = '/login/'

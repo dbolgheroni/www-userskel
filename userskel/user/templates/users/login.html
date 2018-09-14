@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+<div class="jumbotron user-jumbotron">
+    <h2>Log in</h2>
+
+    <form action="{% url 'user-login' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_messages %}
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Log in" button_class="btn-primary" size="large" %}
+
+        {# redirect #}
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div> <!-- jumbotron -->
+<a href="#">Forgot password?</a>
+</div> <!-- col-md -->
+
+<div class="col-md-3"></div>
+
+</div> <!-- row -->
+</div> <!-- container -->
+{% endblock %}
+
