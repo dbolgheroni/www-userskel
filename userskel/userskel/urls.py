@@ -16,7 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from stub.views import DashboardStubView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('user.urls')),
+    url(r'^dashboard_stub/', DashboardStubView.as_view(),
+            name='dashboard-stub')
 ]

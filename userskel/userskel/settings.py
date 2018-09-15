@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'user',
+    'stub',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/1.11/topics/auth/default/
 AUTH_USER_MODEL = 'user.User'
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard_stub/'
