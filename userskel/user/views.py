@@ -12,7 +12,6 @@ class IndexTemplateView(TemplateView):
 
 # Login
 class UserLoginView(LoginView):
-    template_name = "users/login.html"
     template_name = "user/login.html"
 
 
