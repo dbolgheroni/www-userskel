@@ -1,9 +1,13 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import (TemplateView, CreateView, DetailView,
+        UpdateView,)
 from django.contrib.auth.views import (LoginView, PasswordResetView,)
 from django.contrib import messages
 from .forms import NoHelpUserCreationForm
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.forms import UserChangeForm
 
 # Create your views here.
 class IndexTemplateView(TemplateView):
@@ -36,3 +40,20 @@ class UserPasswordResetView(PasswordResetView):
         messages.info(self.request, "A password reset link was created. "
                 "Please check your email and confirm.")
         return super(UserPasswordResetView, self).form_valid(form)
+
+
+# Profile
+class UserDetailView(LoginRequiredMixin, UpdateView):
+    model = get_user_model()
+    form = UserChangeForm
+    fields = ['username', 'email', 'first_name', 'last_name']
+    success_url = reverse_lazy("user-detail")
+    template_name = "user/profile.html"
+
+    def get_object(self):
+        obj = get_object_or_404(get_user_model(), username=self.request.user)
+        return obj
+
+    def form_valid(self, form):
+        messages.success(self.request, "Profile saved.")
+        return super(UserDetailView, self).form_valid(form)

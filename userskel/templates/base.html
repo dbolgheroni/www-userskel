@@ -32,7 +32,7 @@
             </ul>
 
             {% if user.is_authenticated %}
-                <span class="navbar-text mr-2">Logged in as <a href="#">{{ user }}</a></span>
+                <span class="navbar-text mr-2">Logged in as <a href="{% url 'user-detail' %}">{{ user }}</a></span>
                 <a class="btn btn-outline-danger mr-2" href="{% url 'user-logout' %}">Log out</a>
             {% else %}
                 <a class="btn btn-outline-primary mr-2" href="{% url 'user-login' %}">Log in</a>
@@ -45,4 +45,3 @@
     {% block content %}
     {% endblock %}
 </body>
-

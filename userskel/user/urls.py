@@ -1,7 +1,8 @@
 from django.conf.urls import url, include
 from django.contrib.auth.views import logout_then_login
 from .views import (IndexTemplateView,
-		UserLoginView, UserCreateView, UserPasswordResetView,)
+		UserLoginView, UserCreateView, UserPasswordResetView,
+        UserDetailView)
 
 urlpatterns = [
     url(r'^$', IndexTemplateView.as_view(),
@@ -14,6 +15,6 @@ urlpatterns = [
             name='user-create'),
     url(r'^password_reset/$', UserPasswordResetView.as_view(),
             name='password-reset'),
+    url(r'^profile/$', UserDetailView.as_view(),
+            name='user-detail'),
 ]
-
-
