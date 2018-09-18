@@ -1,10 +1,12 @@
 body {
-  margin: 0;
-  padding-top: 56px;
-  font-family: sans-serif;
+        margin-top: 84px;
+        font-family: sans-serif;
 }
 
-.user-jumbotron {
-  margin-top: 30px;
-  margin-bottom: 0px;
+.index-jumbotron {
+        margin-top: -28px;
+}
+
+.login-jumbotron {
+        margin-bottom: 0px;
 }
