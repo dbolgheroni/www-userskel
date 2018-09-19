@@ -1,7 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import (TemplateView, CreateView, DetailView,
         UpdateView,)
-from django.contrib.auth.views import (LoginView, PasswordResetView,)
+from django.contrib.auth.views import (LoginView, PasswordResetView,
+        PasswordChangeView, PasswordChangeDoneView)
 from django.contrib import messages
 from .forms import NoHelpUserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -40,6 +41,16 @@ class UserPasswordResetView(PasswordResetView):
         messages.info(self.request, "A password reset link was created. "
                 "Please check your email and confirm.")
         return super(UserPasswordResetView, self).form_valid(form)
+
+
+# Password Change
+class UserPasswordChangeView(PasswordChangeView):
+    template_name = "user/password_change.html"
+    success_url = reverse_lazy("password-change-done")
+
+
+class UserPasswordChangeDoneView(PasswordChangeDoneView):
+    template_name = "user/password_change_done.html"
 
 
 # Profile
