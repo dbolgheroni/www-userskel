@@ -5,7 +5,7 @@ from django.contrib.auth.views import (LoginView, PasswordResetView,
         PasswordChangeView, PasswordChangeDoneView,
         PasswordResetConfirmView, PasswordResetCompleteView,)
 from django.contrib import messages
-from .forms import NoHelpUserCreationForm
+from .forms import NoHelpUserCreationForm, UserPasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -59,6 +59,7 @@ class UserPasswordResetCompleteView(PasswordResetCompleteView):
 class UserPasswordChangeView(PasswordChangeView):
     template_name = "user/password_change.html"
     success_url = reverse_lazy("password-change-done")
+    form_class = UserPasswordChangeForm
 
 
 class UserPasswordChangeDoneView(PasswordChangeDoneView):
