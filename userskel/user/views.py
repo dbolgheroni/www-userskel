@@ -5,7 +5,8 @@ from django.contrib.auth.views import (LoginView, PasswordResetView,
         PasswordChangeView, PasswordChangeDoneView,
         PasswordResetConfirmView, PasswordResetCompleteView,)
 from django.contrib import messages
-from .forms import NoHelpUserCreationForm, UserPasswordChangeForm
+from .forms import (NoHelpUserCreationForm, UserPasswordChangeForm,
+        UserSetPasswordForm,)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -49,6 +50,7 @@ class UserPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = "user/password_reset_confirm.html"
     success_url = reverse_lazy("password-reset-complete")
     post_reset_login = True
+    form_class = UserSetPasswordForm
 
 
 class UserPasswordResetCompleteView(PasswordResetCompleteView):
