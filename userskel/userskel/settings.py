@@ -131,3 +131,4 @@ STATICFILES_DIRS = [
 AUTH_USER_MODEL = 'user.User'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/dashboard_stub/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
