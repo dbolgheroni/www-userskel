@@ -32,13 +32,13 @@
             </ul>
 
             {% if user.is_authenticated %}
-                <span class="navbar-text mr-2">Logged in as <a href="{% url 'user-detail' %}">{{ user }}</a></span>
-                <a class="btn btn-outline-danger mr-2" href="{% url 'user-logout' %}">Log out</a>
+                <span class="navbar-text mr-2">Logged in as <a href="{% url 'user_detail' %}">{{ user }}</a></span>
+                <a class="btn btn-outline-danger mr-2" href="{% url 'logout' %}">Log out</a>
             {% else %}
-                <a class="btn btn-outline-primary mr-2" href="{% url 'user-login' %}">Log in</a>
+                <a class="btn btn-outline-primary mr-2" href="{% url 'login' %}">Log in</a>
             {% endif %}
 
-            <a class="btn btn-primary my-0" href="{% url 'user-create' %}">Sign Up</a>
+            <a class="btn btn-primary my-0" href="{% url 'user_create' %}">Sign Up</a>
         </div>
     </nav>
 

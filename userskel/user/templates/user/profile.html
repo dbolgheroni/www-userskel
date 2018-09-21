@@ -9,7 +9,7 @@
             Profile
         </div>
         <div class="card-body">
-            <form action="{% url 'user-detail' %}" method="post" class="form">
+            <form action="{% url 'user_detail' %}" method="post" class="form">
                 {% csrf_token %}
                 {% bootstrap_messages %}
                 {% bootstrap_form form %}
@@ -42,7 +42,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <p>Complete the information of your Profile, and try to keep the information up-to-date.</p>
-                            <form action="{% url 'user-detail' %}" method="post" class="form">
+                            <form action="{% url 'user_detail' %}" method="post" class="form">
                                 {% csrf_token %}
                                 {% bootstrap_messages %}
                                 {% bootstrap_form form %}
@@ -53,7 +53,7 @@
                             </form>
                         </div>
                         <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-                            <a class="btn btn-warning" href="{% url 'password-change' %}">Change password</a>
+                            <a class="btn btn-warning" href="{% url 'password_change' %}">Change password</a>
                         </div>
                     </div>
                 </div>

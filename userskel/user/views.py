@@ -26,7 +26,7 @@ class UserLoginView(LoginView):
 class UserCreateView(CreateView):
     template_name = "user/create.html"
     form_class = NoHelpUserCreationForm
-    success_url = reverse_lazy("user-login")
+    success_url = reverse_lazy("login")
 
     def form_valid(self, form):
         messages.success(self.request, "Signed up successfully. "
@@ -37,7 +37,7 @@ class UserCreateView(CreateView):
 # Password Reset
 class UserPasswordResetView(PasswordResetView):
     template_name = "user/password_reset.html"
-    success_url = reverse_lazy("password-reset")
+    success_url = reverse_lazy("password_reset")
     email_template_name = "user/password_reset_email.html"
 
     def form_valid(self, form):
@@ -48,7 +48,6 @@ class UserPasswordResetView(PasswordResetView):
 
 class UserPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = "user/password_reset_confirm.html"
-    success_url = reverse_lazy("password-reset-complete")
     post_reset_login = True
     form_class = UserSetPasswordForm
 
@@ -60,7 +59,6 @@ class UserPasswordResetCompleteView(PasswordResetCompleteView):
 # Password Change
 class UserPasswordChangeView(PasswordChangeView):
     template_name = "user/password_change.html"
-    success_url = reverse_lazy("password-change-done")
     form_class = UserPasswordChangeForm
 
 
@@ -73,7 +71,7 @@ class UserDetailView(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     form = UserChangeForm
     fields = ['username', 'email', 'first_name', 'last_name']
-    success_url = reverse_lazy("user-detail")
+    success_url = reverse_lazy("user_detail")
     template_name = "user/profile.html"
 
     def get_object(self):
