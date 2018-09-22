@@ -8,6 +8,6 @@
     <form action="{% url 'user_create' %}" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
-        {% bootstrap_button button_type="submit" content="Create" button_class="btn-primary" size="large" %}
+        {% bootstrap_button button_type="submit" content="Sign Up" button_class="btn-primary" size="large" %}
     </form>
 {% endblock user_form %}
