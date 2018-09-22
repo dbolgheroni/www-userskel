@@ -1,15 +1,8 @@
-{% extends "base.html" %}
+{% extends "./base_user.html" %}
 
 {% load bootstrap4 %}
 
-{% block content %}
-<div class="container">
-<div class="row">
-
-<div class="col-md-3"></div>
-
-<div class="col-md-6">
-<div class="jumbotron login-jumbotron">
+{% block user_form %}
     <h2>Log in</h2>
 
     <form action="{% url 'login' %}" method="post" class="form">
@@ -21,18 +14,11 @@
         {# redirect #}
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
-</div> <!-- jumbotron -->
+{% endblock user_form %}
+
+{% block user_form_footer %}
 <div class="container"><div class="row">
     <div class="col-md-6"><p><small><a href="{% url 'password_reset' %}">Forgot password?</a></small></p></div>
     <div class="col-md-6"><p class="text-right"><small>Don't have an account? <a href="{% url 'user_create' %}">Sign up</a>!</small></p></div>
 </div></div>
-
-<!-- div></div -->
-</div> <!-- col-md -->
-
-<div class="col-md-3"></div>
-
-</div> <!-- row -->
-</div> <!-- container -->
-{% endblock %}
-
+{% endblock user_form_footer %}
