@@ -1,5 +1,6 @@
 {% load static %}
 {% load bootstrap4 %}
+{% load icons %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,6 +9,13 @@
     {% bootstrap_javascript jquery=1 %}
 
     <link rel="stylesheet" href="{% static "base.css" %}" />
+
+	<!-- Font Awesome CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		  rel="stylesheet"
+		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+		  crossorigin="anonymous"
+	>
 </head>
 
 <body>
@@ -33,12 +41,12 @@
 
             {% if user.is_authenticated %}
                 <span class="navbar-text mr-2">Logged in as <a href="{% url 'user_detail' %}">{{ user }}</a></span>
-                <a class="btn btn-outline-danger mr-2" href="{% url 'logout' %}">Log out</a>
+                <a class="btn btn-outline-danger mr-2" href="{% url 'logout' %}">{% icon 'sign-out' %} Log out</a>
             {% else %}
-                <a class="btn btn-outline-primary mr-2" href="{% url 'login' %}">Log in</a>
+                <a class="btn btn-outline-primary mr-2" href="{% url 'login' %}">{% icon 'sign-in' %} Log in</a>
             {% endif %}
 
-            <a class="btn btn-primary my-0" href="{% url 'user_create' %}">Sign Up</a>
+            <a class="btn btn-primary my-0" href="{% url 'user_create' %}">{% icon 'user-plus' %} Sign Up</a>
         </div>
     </nav>
 

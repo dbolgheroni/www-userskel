@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'django_icons',
     'user',
     'stub',
 ]
@@ -128,6 +129,7 @@ STATICFILES_DIRS = [
 
 # Authentication
 # https://docs.djangoproject.com/en/1.11/topics/auth/default/
+
 AUTH_USER_MODEL = 'user.User'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/dashboard_stub/'
