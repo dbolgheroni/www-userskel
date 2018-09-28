@@ -17,8 +17,5 @@
 {% endblock user_form %}
 
 {% block user_form_footer %}
-<div class="container"><div class="row">
-    <div class="col-md-6"><p><small><a href="{% url 'password_reset' %}">Forgot password?</a></small></p></div>
-    <div class="col-md-6"><p class="text-right"><small>Don't have an account? <a href="{% url 'user_create' %}">Sign up</a>!</small></p></div>
-</div></div>
+    <small><a href="{% url 'password_reset' %}">Forgot password</a></small><small class="ml-3">Don't have an account? <a href="{% url 'user_create' %}">Sign Up</a></small>
 {% endblock user_form_footer %}
