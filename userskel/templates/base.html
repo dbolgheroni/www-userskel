@@ -40,7 +40,7 @@
             </ul>
 
             {% if user.is_authenticated %}
-                <span class="navbar-text mr-2">Logged in as <a href="{% url 'user_detail' %}">{{ user }}</a></span>
+                <span class="navbar-text mr-2">{% icon 'user' %} Logged in as <a href="{% url 'user_detail' %}">{{ user }}</a></span>
                 <a class="btn btn-outline-danger mr-2" href="{% url 'logout' %}">{% icon 'sign-out' %} Log out</a>
             {% else %}
                 <a class="btn btn-outline-primary mr-2" href="{% url 'login' %}">{% icon 'sign-in' %} Log in</a>
