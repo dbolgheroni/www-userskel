@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('user.urls')),
     url(r'^dashboard_stub/', DashboardStubView.as_view(),
-            name='dashboard-stub')
+            name='dashboard_stub')
 ]
