@@ -29,9 +29,10 @@ class UserCreateView(CreateView):
     success_url = reverse_lazy("login")
 
     def form_valid(self, form):
+        response = super(UserCreateView, self).form_valid(form) 
         messages.success(self.request, "Signed up successfully. "
                 "Log in now.")
-        return super(UserCreateView, self).form_valid(form)
+        return response
 
 
 # Password Reset
@@ -41,9 +42,10 @@ class UserPasswordResetView(PasswordResetView):
     email_template_name = "user/password_reset_email.html"
 
     def form_valid(self, form):
+        response = super(UserPasswordResetView, self).form_valid(form) 
         messages.info(self.request, "A password reset link was created. "
                 "Please check your email and confirm.")
-        return super(UserPasswordResetView, self).form_valid(form)
+        return response
 
 
 class UserPasswordResetConfirmView(PasswordResetConfirmView):
@@ -79,5 +81,6 @@ class UserDetailView(LoginRequiredMixin, UpdateView):
         return obj
 
     def form_valid(self, form):
+        response = super(UserDetailView, self).form_valid(form) 
         messages.success(self.request, "Profile saved.")
-        return super(UserDetailView, self).form_valid(form)
+        return response
